@@ -3,6 +3,8 @@ testng-system-out-printer
 
 A Java TestNG Listener that prints test method names, millisecond timings, and outcomes to System.out as the tests are completed.
 
+Currently, when running TestNG tests in e.g. Maven, nothing is printed to the console while the tests are running. This library simply prints the tests to System.out/stdout as they are completed.
+
 
 ## License
 
