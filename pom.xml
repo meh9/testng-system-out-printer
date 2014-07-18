@@ -28,6 +28,8 @@
         <developer>
             <name>Mats Henrikson</name>
             <email>github@little-fluffy-clouds.com</email>
+            <organization>Little Fluffy Clouds</organization>
+            <organizationUrl>https://github.com/meh9</organizationUrl>
         </developer>
     </developers>
     <licenses>
