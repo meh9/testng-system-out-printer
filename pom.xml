@@ -9,7 +9,7 @@
         mvn clean deploy -P release-sign-artifacts -Dgpg.passphrase='<gpg pass goes here>'
     -->
 
-    <groupId>com.little_fluffy_clouds</groupId>
+    <groupId>com.little-fluffy-clouds</groupId>
     <artifactId>testng-system-out-printer</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
