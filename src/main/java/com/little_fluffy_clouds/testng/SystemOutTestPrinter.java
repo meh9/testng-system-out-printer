@@ -30,6 +30,9 @@ import org.testng.ITestResult;
  */
 public class SystemOutTestPrinter implements IInvokedMethodListener {
 
+    /** default constructor */
+    public SystemOutTestPrinter() { /* noop */}
+
     @Override
     public void beforeInvocation(final IInvokedMethod method, final ITestResult testResult) { }
 
