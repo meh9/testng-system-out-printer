@@ -12,8 +12,9 @@ specific language governing permissions and limitations
 under the License.
 
 This project includes:
-  BeanShell under GNU LESSER GENERAL PUBLIC LICENSE
-  JCommander under The Apache Software License, Version 2.0
-  TestNG under Apache License, Version 2.0
+  jcommander under Apache License, Version 2.0
+  jquery under MIT License
+  SLF4J API Module under MIT License
+  testng under Apache License, Version 2.0
   TestNG System.out printer under Apache License Version 2.0
 
