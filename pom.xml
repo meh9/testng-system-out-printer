@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!--
-        To perform a full release with a deploy to Maven Central, ensure gpg-agent is running and then:
+        To perform a full release and deploy to Maven Central, ensure gpg-agent is running and then:
 
         mvn clean deploy -P release-sign-artifacts -Dgpg.keyname='<keyname>'
     -->
@@ -48,8 +48,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.rootdir>${basedir}</project.rootdir>
-        <maven-notice-plugin.version>1.0.6.1</maven-notice-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.2</nexus-staging-maven-plugin.version>
+        <meh.notice-maven-plugin.version>2.0.0</meh.notice-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
     </properties>
 
     <distributionManagement>
@@ -83,16 +83,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>3.1.1</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.11.0</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>20</source>
+                    <target>20</target>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
@@ -100,7 +100,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>1.7</version>
+                <version>2.0.0</version>
                 <configuration>
                     <licenseName>apache_v2</licenseName>
                 </configuration>
@@ -116,8 +116,8 @@
 
             <plugin>
                 <groupId>org.jasig.maven</groupId>
-                <artifactId>maven-notice-plugin</artifactId>
-                <version>${maven-notice-plugin.version}</version>
+                <artifactId>notice-maven-plugin</artifactId>
+                <version>${meh.notice-maven-plugin.version}</version>
                 <configuration>
                     <generateChildNotices>true</generateChildNotices>
                     <!--<noticeTemplate>${project.rootdir}/licensing/notice-template</noticeTemplate>-->
@@ -173,7 +173,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.2.1</version>
+                        <version>3.2.1</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -194,7 +194,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9.1</version>
+                        <version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -216,7 +216,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
+                        <version>3.0.1</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -243,8 +243,8 @@
                     <!-- don't run notice plugin since the root notice will be messed up due to 'missing' modules -->
                     <plugin>
                         <groupId>org.jasig.maven</groupId>
-                        <artifactId>maven-notice-plugin</artifactId>
-                        <version>${maven-notice-plugin.version}</version>
+                        <artifactId>notice-maven-plugin</artifactId>
+                        <version>${meh.notice-maven-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>none</phase>
@@ -258,10 +258,15 @@
     </profiles>
 
     <dependencies>
+        <!--suppress VulnerableLibrariesLocal -->
+        <!-- This vulnerability is not going to be fixed therefore suppressing it:
+            https://stackoverflow.com/questions/2322261/jquery-vulnerability-nvd-cve-2007-2379
+        -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8.8</version>
+            <version>7.7.1</version>
+
         </dependency>
     </dependencies>
 
