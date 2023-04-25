@@ -11,7 +11,7 @@
 
     <groupId>com.little-fluffy-clouds</groupId>
     <artifactId>testng-system-out-printer</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>TestNG System.out printer</name>
